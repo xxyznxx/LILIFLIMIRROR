@@ -175,27 +175,27 @@ help = telegraph.create_page(
     )["path"]
 
 help_string_telegraph2 = f'''
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
-
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
-
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
-
-/{BotCommands.RestartCommand}: Restart and update the bot
-
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
-
-/{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
-
-/{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
+<b>/{BotCommands.PingCommand}</b>: Check how long it takes to Ping the Bot
+<br><br>
+<b>/{BotCommands.AuthorizeCommand}</b>: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+<br><br>
+<b>/{BotCommands.UnAuthorizeCommand}</b>: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+<br><br>
+<b>/{BotCommands.AuthorizedUsersCommand}</b>: Show authorized users (Only Owner & Sudo)
+<br><br>
+<b>/{BotCommands.AddSudoCommand}</b>: Add sudo user (Only Owner)
+<br><br>
+<b>/{BotCommands.RmSudoCommand}</b>: Remove sudo users (Only Owner)
+<br><br>
+<b>/{BotCommands.RestartCommand}</b>: Restart and update the bot
+<br><br>
+<b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
+<br><br>
+<b>/{BotCommands.SpeedCommand}</b>: Check Internet Speed of the Host
+<br><br>
+<b>/{BotCommands.ShellCommand}</b>: Run commands in Shell (Only Owner)
+<br><br>
+<b>/{BotCommands.ExecHelpCommand}</b>: Get help for Executor module (Only Owner)
 '''
 help_tgh = telegraph.create_page(
         title='LILIFLIMIRROR Help',
