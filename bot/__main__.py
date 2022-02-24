@@ -170,7 +170,7 @@ help_string_telegraph = f'''<br>
 '''
 
 help = telegraph.create_page(
-        title='Mirrorlilis Help',
+        title='LILIFLIMIRROR Help',
         content=help_string_telegraph,
     )["path"]
 
@@ -198,7 +198,7 @@ help_string_telegraph2 = f'''
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 '''
 help_tgh = telegraph.create_page(
-        title='Mirrorlilis Help',
+        title='LILIFLIMIRROR Help',
         content=help_string_telegraph2,
     )["path"]
 
