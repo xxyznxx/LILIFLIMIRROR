@@ -1,7 +1,9 @@
+[![Betterme](https://telegra.ph/file/eeb1581d70096a6b62133.jpg)](https://t.me/xxyznxx)
+
+
 This is a Telegram Bot written in Python for mirroring files on the Internet to your Google Drive or Telegram. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
 
 # Features:
-
 
 - qBittorrent
 - Select files from Torrent before downloading using qbittorrent
