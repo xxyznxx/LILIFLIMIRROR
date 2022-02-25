@@ -49,7 +49,7 @@ class MirrorListener:
         self.isQbit = isQbit
         self.isLeech = isLeech
         self.pswd = pswd
-        self.tag = tag
+        uname = tag
 
     def clean(self):
         try:
@@ -187,7 +187,7 @@ class MirrorListener:
             except Exception as e:
                 LOGGER.error(str(e))
             count = len(download_dict)
-        msg = f"{self.tag} your download has been stopped due to: {error}"
+        msg = f"{uname} your download has been stopped due to: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -201,7 +201,7 @@ class MirrorListener:
             msg += f'\n<b>Total Files: </b>{count}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>cc: </b>{self.tag}\n\n'
+            msg += f'\n<b>cc: </b>{uname}\n\n'
             if self.message.chat.type == 'private':
                 sendMessage(msg, self.bot, self.update)
             else:
@@ -293,7 +293,7 @@ class MirrorListener:
                 pass
             del download_dict[self.message.message_id]
             count = len(download_dict)
-        sendMessage(f"{self.tag} {e_str}", self.bot, self.update)
+        sendMessage(f"{uname} {e_str}", self.bot, self.update)
         if count == 0:
             self.clean()
         else:
