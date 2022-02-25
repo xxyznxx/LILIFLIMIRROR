@@ -67,7 +67,7 @@ def start(update, context):
 '''
         update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else:
-        sendMessage('𝚈𝚘𝚞 𝚗𝚘𝚝 𝙰𝚞𝚝𝚑𝚘𝚛𝚒𝚣𝚎𝚍 𝚞𝚜𝚎𝚛, 𝚌𝚘𝚗𝚝𝚊𝚌𝚝 𝚝𝚑𝚎 𝚘𝚠𝚗𝚎𝚛 𝚝𝚘 𝚐𝚎𝚝 𝚊𝚌𝚌𝚎𝚜𝚜.', context.bot, update)
+        sendMessage('𝙃𝙚𝙮, 𝙄𝙛 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙢𝙚, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 {OWNER_ID} 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙘𝙘𝙚𝙨𝙨.', context.bot, update)
 
 def restart(update, context):
     restart_message = sendMessage("𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐...", context.bot, update)
