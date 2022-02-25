@@ -233,6 +233,11 @@ class MirrorListener:
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
                 msg += f'\n<b>🗃 Folder: </b>{folders}'
                 msg += f'\n<b>🗂 File: </b>{files}'
+        if self.message.from_user.username:
+            uname = f"@{self.message.from_user.username}"
+        else:
+            uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
+        if uname is not None:
             msg += f'\n\n<b>🤖 𝗣𝗘𝗡𝗖𝗘𝗥𝗠𝗜𝗡: </b>{self.tag}'
             buttons = ButtonMaker()
             link = short_url(link)
