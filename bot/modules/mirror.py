@@ -49,7 +49,7 @@ class MirrorListener:
         self.isQbit = isQbit
         self.isLeech = isLeech
         self.pswd = pswd
-        uname = tag
+        self.tag = tag
 
     def clean(self):
         try:
@@ -187,7 +187,7 @@ class MirrorListener:
             except Exception as e:
                 LOGGER.error(str(e))
             count = len(download_dict)
-        msg = f"{uname} your download has been stopped due to: {error}"
+        msg = f"{self.tag} your download has been stopped due to: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -195,13 +195,13 @@ class MirrorListener:
             update_all_messages()
 
     def onUploadComplete(self, link: str, size, files, folders, typ, name: str):
-        msg = f'<b>📁 Nama: </b><code>{escape(name)}</code>\n<b>📦 Ukuran: </b>{size}'
+        msg = f'<b>📁 Name: </b><code>{escape(name)}</code>\n<b>📦 Size: </b>{size}'
         if self.isLeech:
             count = len(files)
             msg += f'\n<b>Total Files: </b>{count}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
-            msg += f'\n<b>cc: </b>{uname}\n\n'
+            msg += f'\n<b>cc: </b>{self.tag}\n\n'
             if self.message.chat.type == 'private':
                 sendMessage(msg, self.bot, self.update)
             else:
@@ -233,6 +233,7 @@ class MirrorListener:
             if ospath.isdir(f'{DOWNLOAD_DIR}{self.uid}/{name}'):
                 msg += f'\n<b>🗃 Folder: </b>{folders}'
                 msg += f'\n<b>🗂 File: </b>{files}'
+            msg += f'\n\n<b>🤖 𝗣𝗘𝗡𝗖𝗘𝗥𝗠𝗜𝗡: </b>{self.tag}'
             buttons = ButtonMaker()
             link = short_url(link)
             buttons.buildbutton("💾 Drive Link 💾", link)
@@ -257,13 +258,6 @@ class MirrorListener:
                 buttons.buildbutton(f"{BUTTON_FIVE_NAME}", f"{BUTTON_FIVE_URL}")
             if BUTTON_SIX_NAME is not None and BUTTON_SIX_URL is not None:
                 buttons.buildbutton(f"{BUTTON_SIX_NAME}", f"{BUTTON_SIX_URL}")
-            if self.message.from_user.username:
-                uname = f"@{self.message.from_user.username}"
-            else:
-                uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-            if uname is not None:
-                msg += f'\n\n<b>🤖 𝗣𝗘𝗡𝗖𝗘𝗥𝗠𝗜𝗡: </b>{uname}'
-            try:
             if self.isQbit and QB_SEED and not self.extract:
                 if self.isZip:
                     try:
@@ -294,7 +288,7 @@ class MirrorListener:
                 pass
             del download_dict[self.message.message_id]
             count = len(download_dict)
-        sendMessage(f"{uname} {e_str}", self.bot, self.update)
+        sendMessage(f"{self.tag} {e_str}", self.bot, self.update)
         if count == 0:
             self.clean()
         else:
