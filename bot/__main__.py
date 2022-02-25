@@ -9,7 +9,7 @@ from sys import executable
 from telegram import ParseMode, InlineKeyboardMarkup
 from telegram.ext import CommandHandler
 
-from bot import bot, app, dispatcher, updater, botStartTime, IMAGE_URL, IGNORE_PENDING_REQUESTS, PORT, alive, web, OWNER_ID, AUTHORIZED_CHATS, LOGGER, Interval, rss_session, a2c
+from bot import bot, app, dispatcher, updater, botStartTime, IMAGE_URL, IGNORE_PENDING_REQUESTS, PORT, alive, web, OWNER_ID, OWNER, AUTHORIZED_CHATS, LOGGER, Interval, rss_session, a2c
 from .helper.ext_utils.fs_utils import start_cleanup, clean_all, exit_clean_up
 from .helper.telegram_helper.bot_commands import BotCommands
 from .helper.telegram_helper.message_utils import sendMessage, sendMarkup, editMessage, sendLogFile
@@ -67,7 +67,7 @@ def start(update, context):
 '''
         update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else:
-        sendMessage('𝙃𝙚𝙮, 𝙄𝙛 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙢𝙚, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 {OWNER_ID} 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙘𝙘𝙚𝙨𝙨.', context.bot, update)
+        sendMessage('𝙃𝙚𝙮, 𝙄𝙛 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙢𝙚, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 {OWNER} 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙘𝙘𝙚𝙨𝙨.', context.bot, update)
 
 def restart(update, context):
     restart_message = sendMessage("𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐...", context.bot, update)
