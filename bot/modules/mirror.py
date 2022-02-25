@@ -238,7 +238,7 @@ class MirrorListener:
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
         if uname is not None:
-            msg += f'\n\n<b>🤖 𝗣𝗘𝗡𝗖𝗘𝗥𝗠𝗜𝗡: </b>{self.tag}'
+            msg += f'\n\n<b>🤖 𝗣𝗘𝗡𝗖𝗘𝗥𝗠𝗜𝗡: </b>{uname}'
             buttons = ButtonMaker()
             link = short_url(link)
             buttons.buildbutton("💾 Drive Link 💾", link)
