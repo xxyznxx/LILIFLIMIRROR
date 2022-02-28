@@ -58,7 +58,7 @@ def stats(update, context):
 
 def start(update, context):
     buttons = ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/IDONGO/LILIFLIMIRROR")
+    buttons.buildbutton("P", "https://t.me/idgxyz")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -187,6 +187,8 @@ help_string_telegraph2 = f'''
 <br><br>
 <b>/{BotCommands.RmSudoCommand}</b>: Remove sudo users (Only Owner)
 <br><br>
+<b>/{BotCommands.StartCommand}</b>: Start using bot
+<br><br>
 <b>/{BotCommands.RestartCommand}</b>: Restart and update the bot
 <br><br>
 <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
@@ -241,6 +243,7 @@ botcmds = [
         (f'{BotCommands.StatusCommand}','Get mirror status message'),
         (f'{BotCommands.StatsCommand}','Bot usage stats'),
         (f'{BotCommands.PingCommand}','Ping the bot'),
+        (f'{BotCommands.StartCommand}','Start using bot'),
         (f'{BotCommands.RestartCommand}','Restart the bot'),
         (f'{BotCommands.LogCommand}','Get the bot Log'),
         (f'{BotCommands.HelpCommand}','Get detailed help')
